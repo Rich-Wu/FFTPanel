@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
@@ -25,6 +24,7 @@
 
  /* Start Default styling override */
  :root {
+   color: white;
    font-family: Altima;
    background-color: black;
    cursor: url('FFTCursor.png') 30 0, auto;
@@ -51,49 +51,3 @@
    color: black;
  }
  /* End Default Style Override */
-
- .logo {
-   position: sticky;
-   top: 20vh;
-   height: 0px;
-   width: 100vw;
-   background-color: white;
-   background-image: url('logo.jpg');
-   background-repeat: no-repeat;
-   background-position: 70% 40%;
-   background-size: auto auto;
-   transition: height 2s linear;
- }
-
- .showlogo {
-   height: 50vh;
- }
-
- .menuline {
-   position: relative;
-   top: 25vh;
-   display: flex;
-   justify-content: center;
- }
-
- .menu {
-   display: inline-block;
-   height: auto;
-   width: auto;
-   opacity: .9;
-   position: relative;
-   z-index: 1;
-   background-color: #a49c83;
-   overflow: hidden;
-   border: 1px solid black;
-   box-shadow: 4px 5px #1b1b1b;
-   border-radius: 2px;
-   padding: .5em 1em;
-   font-size: 2em;
- }
-
- .mainmenu {
-   align-items: center;
-   position: relative;
-   width: 15%;
- }
