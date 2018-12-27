@@ -16,11 +16,11 @@
 
  @font-face {
    font-family: "Altima";
-   src: url("FFTFont/Altima.eot");
-   src: url("FFTFont/Altima.woff2") format('woff2'),
-        url("FFTFont/Altima.woff") format('woff'),
-        url("FFTFont/Altima.ttf") format('truetype'),
-        url("FFTFont/Altima.svg#Altima") format('svg');
+   src: url("Altima.eot");
+   src: url("Altima.woff2") format('woff2'),
+        url("Altima.woff") format('woff'),
+        url("Altima.ttf") format('truetype'),
+        url("Altima.svg#Altima") format('svg');
  }
 
  /* Start Default styling override */
