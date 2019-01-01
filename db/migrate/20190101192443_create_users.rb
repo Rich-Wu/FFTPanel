@@ -5,8 +5,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.integer :age
       t.string :education
+      t.string :email
 
       t.timestamps
     end
+    add_index :users, :email, unique: true
   end
 end

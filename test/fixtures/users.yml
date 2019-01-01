@@ -5,9 +5,11 @@ one:
   last_name: MyString
   age: 1
   education: MyString
+  email: MyString
 
 two:
   first_name: MyString
   last_name: MyString
   age: 1
   education: MyString
+  email: MyString
