@@ -44,7 +44,6 @@
    z-index: 1;
    background-color: #a49c83;
    overflow: hidden;
-   border: 1px solid black;
    box-shadow: 4px 5px #1b1b1b;
    border-radius: 2px;
    font-size: 2em;
@@ -52,6 +51,7 @@
  }
 
  .show {
+   border: 1px solid black;
    padding: .5em 1em;
    height: auto;
    max-height: 100%;
@@ -59,6 +59,7 @@
  }
 
  .mainmenu {
+   min-width: 5em;
    align-items: center;
    position: relative;
  }
