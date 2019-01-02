@@ -63,13 +63,13 @@
    background-color: #a49c83;
    overflow: hidden;
    box-shadow: 4px 5px #1b1b1b;
-   border-radius: 2px;
+   border-radius: 1px;
    font-size: 2em;
    transition: all 0.1s linear;
  }
 
  .show {
-   border: 1px solid black;
+   border: 2px outset #d6d6d6;
    padding: .5em 1em;
    height: auto;
    max-height: 100%;
@@ -77,13 +77,15 @@
  }
 
  .user {
+   text-align: center;
    box-sizing: border-box;
    display: inline-block;
    position: relative;
    z-index: 1;
-   // background-image: linear-gradient(to bottom right, rgba(0,0,0,.5) 50%, rgba(0,0,0,0) 100%);
-   background-color: rgba(0,0,0,.5);
+   background-color: rgba(0,0,0,.4);
    box-shadow: 0 0 25px black;
    overflow: hidden;
    font-size: 2em;
+   color: white;
+   text-shadow: 0px 0px 6px #000;
  }
