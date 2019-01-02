@@ -1,6 +1,8 @@
 var navitems = document.getElementsByClassName('navitem');
 var menu = document.getElementsByClassName('menu')[0];
-menu.classList.add('show');
+setTimeout(function() {
+  menu.className = menu.className + " show";
+}, 2600);
 for (item in navitems) {
   navitems[item].onmouseover = function() {
     this.style.paddingLeft = "10px";

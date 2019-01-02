@@ -12,7 +12,7 @@
  */
 
  .logo {
-   position: sticky;
+   position: relative;
    top: 20vh;
    height: 0px;
    width: 100vw;
@@ -21,7 +21,7 @@
    background-repeat: no-repeat;
    background-position: 70% 40%;
    background-size: auto auto;
-   transition: height 2s linear;
+   transition: all 2s linear;
  }
 
  .showlogo {
@@ -37,7 +37,7 @@
 
  .menu {
    display: inline-block;
-   height: 0;
+   max-height: 0;
    width: 0;
    opacity: .9;
    position: relative;
@@ -49,12 +49,12 @@
    border-radius: 2px;
    font-size: 2em;
    transition: all 0.1s linear;
-   transition-delay: 2s 2s;
  }
 
  .show {
    padding: .5em 1em;
    height: auto;
+   max-height: 100%;
    width: auto;
  }
 
