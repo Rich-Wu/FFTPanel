@@ -1,6 +1,7 @@
 var navitems = document.getElementsByClassName('navitem');
 var menu = document.getElementsByClassName('menu')[0];
 window.addEventListener('click', function(){
+  document.getElementsByClassName('logo')[0].style.transition = '0s';
   menu.className = menu.className + " show";
 });
 for (item in navitems) {
