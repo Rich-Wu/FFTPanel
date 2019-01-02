@@ -1,3 +1,6 @@
+var intro = document.getElementsByClassName("logo");
+setTimeout(function() {
+  intro[0].classList.add("showlogo");}, 500);
 var navitems = document.getElementsByClassName('navitem');
 var menu = document.getElementsByClassName('menu')[0];
 window.addEventListener('click', function(){

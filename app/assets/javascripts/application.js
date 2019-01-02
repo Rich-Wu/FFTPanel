@@ -13,10 +13,4 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
-
-console.log("linked");
-
-var intro = document.getElementsByClassName("logo");
-setTimeout(function() {
-  intro[0].classList.add("showlogo");}, 500);
+// require_tree .

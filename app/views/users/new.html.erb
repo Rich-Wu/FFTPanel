@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'users' %>
-<div style = "grid-area: user; height: 30vh;">
+<div class = "user" style = "grid-area: user; width: 90%; height: 85%; margin: auto; position: static;">
   <%= render 'shared/userCard' %>
 </div>
 <div style = "grid-area: menu;">
@@ -9,3 +9,4 @@
   <h1>Users#new</h1>
   <p>Find me in app/views/users/new.html.erb</p>
 </div>
+<%= javascript_include_tag 'menus', 'data-turbolinks-track': 'reload' %>

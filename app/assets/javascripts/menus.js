@@ -1,7 +1,9 @@
 var navitems = document.getElementsByClassName('navitem');
-var mainmenu = document.getElementsByClassName('menu')[0];
+var menus = document.getElementsByClassName('menu');
 setTimeout(function(){
-  mainmenu.classList.add('show');
+  for (i=0;i<menus.length;i++){
+    menus[i].classList.add('show');
+  };
 }, 10);
 for (item in navitems) {
   navitems[item].onmouseover = function() {
@@ -13,6 +15,5 @@ for (item in navitems) {
   };
   navitems[item].onclick = function() {
     new Audio("/assets/confirm.mp3").play();
-    this.parentElement.style.remove('menuitem');
   }
 };
