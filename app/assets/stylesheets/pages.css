@@ -37,8 +37,8 @@
 
  .menu {
    display: inline-block;
-   height: auto;
-   width: auto;
+   height: 0;
+   width: 0;
    opacity: .9;
    position: relative;
    z-index: 1;
@@ -47,12 +47,18 @@
    border: 1px solid black;
    box-shadow: 4px 5px #1b1b1b;
    border-radius: 2px;
-   padding: .5em 1em;
    font-size: 2em;
+   transition: all 0.1s linear;
+   transition-delay: 2s 2s;
+ }
+
+ .show {
+   padding: .5em 1em;
+   height: auto;
+   width: auto;
  }
 
  .mainmenu {
    align-items: center;
    position: relative;
-   width: 15%;
  }
