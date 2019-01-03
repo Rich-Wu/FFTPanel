@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cohorts/new'
+  get 'cohorts/edit'
+  get 'cohorts/index'
+  get 'cohorts/show'
   root 'pages#main'
   get '/login', to: 'pages#main'
   resources :users
