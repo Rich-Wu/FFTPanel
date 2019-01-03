@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_01_192712) do
+ActiveRecord::Schema.define(version: 2019_01_03_225345) do
+
+  create_table "cohorts", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -20,8 +29,12 @@ ActiveRecord::Schema.define(version: 2019_01_01_192712) do
     t.string "email"
     t.string "password"
     t.string "avatar"
+    t.integer "cohort_id", default: 0
+    t.boolean "instructor", default: false
+    t.integer "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_users_on_cohort_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
