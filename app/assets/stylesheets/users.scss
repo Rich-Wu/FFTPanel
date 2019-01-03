@@ -17,7 +17,7 @@
 
  body {
    display: grid;
-   grid-template-rows: 50vh 50vh;
+   grid-template-rows: 60vh 40vh;
    grid-template-columns: [user] 15em [c];
    grid-template-areas: "user c"
                         "menu c";
