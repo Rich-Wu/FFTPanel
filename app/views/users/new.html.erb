@@ -7,13 +7,13 @@
 </div>
 <div style = "grid-area: c;">
   <%= form_for @user, html: {class: "userForm"} do |f| %>
-  <%= f.text_field :first_name %><br>
-  <%= f.text_field :last_name %><br>
-  <%= f.text_field :age %><br>
-  <%= f.select(:education, options_for_select([['High School', 1], ['College', 2], ['Masters', 3], ['PHD', 4]]), include_blank: 'Select your level of education') %><br>
-  <%= f.email_field :email %><br>
-  <%= f.password_field :password %><br>
-  <%= f.submit "Confirm" %>
+    <%= f.text_field :first_name %><br>
+    <%= f.text_field :last_name %><br>
+    <%= f.text_field :age %><br>
+    <%= f.select(:education, options_for_select([['High School', 1], ['College', 2], ['Masters', 3], ['PHD', 4]]), {include_blank: 'Select your level of education'}, required: true) %><br>
+    <%= f.email_field :email %><br>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Confirm" %>
   <% end %>
 </div>
 <%= javascript_include_tag 'menus', 'data-turbolinks-track': 'reload' %>
