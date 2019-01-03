@@ -7,8 +7,9 @@
 </div>
 <div style = "grid-area: c;">
   <% @users.each do |user| %>
-    <div>
-      <%= user.first_name %>
+    <div class = "menu">
+      <%= user.first_name %><br>
+      <%= image_tag("/assets/portraits/#{user.avatar}") %>
     </div>
   <% end %>
 </div>
