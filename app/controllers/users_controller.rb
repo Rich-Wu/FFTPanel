@@ -5,17 +5,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    # if @user.valid?
-    #   p params
-    #   @user.save
-    #   redirect_to users_path
-    # else
-    #   p params
-    #   p @user.errors.messages
-    #   render 'new'
-    # end
-    redirect_to root_path
+    if @user.valid?
+      @user.save
+      redirect_to users_path
+    else
+      p @user.errors.messages
+      render 'new'
+    end
   end
 
   def edit

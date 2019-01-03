@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#main'
   get '/login', to: 'pages#main'
+  resources :users
   get '/newMember', to: 'users#new'
   post '/newMember', to: 'users#new'
   get '/users', to: 'users#index'
