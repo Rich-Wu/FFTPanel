@@ -15,6 +15,6 @@ User.create(first_name: 'Richard', last_name: 'Wu', email: 'example@example.com'
     age: Faker::Number.number(2),
     email: Faker::Internet.unique.email,
     password: (0...8).map { (rand(10)+48).chr }.join,
-    education: Faker::Number.between(1, 4)
+    education: Faker::Number.between(1, 4),
   )
 end
