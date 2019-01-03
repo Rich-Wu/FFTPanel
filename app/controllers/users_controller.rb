@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      redirect_to users_path
+      redirect_to user_path(id: @user.id)
     else
       p @user.errors.messages
       render 'new'
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   private
