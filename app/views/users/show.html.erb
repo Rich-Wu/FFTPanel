@@ -1,2 +1,15 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= stylesheet_link_tag 'users' %>
+<div class = "user" style = "grid-area: user; width: 85%; height: 87%; margin: auto; position: static;">
+  <%= render 'shared/userCard' %>
+</div>
+<div style = "grid-area: menu;">
+  <%= render 'shared/menu' %>
+</div>
+<div style = "grid-area: c;">
+  <% if @user != nil %>
+    <%= image_tag("/assets/portraits/FFT_Red_Chocobo_Portrait.png") %>
+  <% else %>
+    <h1>User does not exist!</h1>
+  <% end %>
+</div>
+<%= javascript_include_tag 'menus', 'data-turbolinks-track': 'reload' %>

@@ -18,10 +18,17 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
+    begin
+      @user = User.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+    		puts 'Navigated to invalid /user/:id'
+        puts 'Redirecting to Users index'
+    		redirect_to users_path
+    end
   end
 
   private
