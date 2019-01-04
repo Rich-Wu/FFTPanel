@@ -1,2 +1,0 @@
-class CohortStudent < ApplicationRecord
-end
