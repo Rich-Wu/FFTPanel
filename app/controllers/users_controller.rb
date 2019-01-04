@@ -15,6 +15,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    begin
+      @user = User.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        puts 'Navigated to invalid /user/:id'
+        puts 'Redirecting to Users index'
+        redirect_to users_path
+    end
   end
 
   def index
