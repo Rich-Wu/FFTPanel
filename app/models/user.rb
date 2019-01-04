@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   before_create :default_values
   before_validation :downcase_email
-  belongs_to :cohort
+  belongs_to :cohort, optional: true
   validates :email, :presence => true, :uniqueness => true
 
   private
@@ -12,6 +12,5 @@ class User < ApplicationRecord
 
   def default_values
     self.avatar ||= "FFT_Red_Chocobo_Portrait.png"
-    self.cohort_id ||= 1
   end
 end

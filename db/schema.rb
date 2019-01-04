@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_01_03_225345) do
     t.string "email"
     t.string "password"
     t.string "avatar"
-    t.integer "cohort_id", default: 0
+    t.integer "cohort_id"
     t.boolean "instructor", default: false
     t.integer "salary"
     t.datetime "created_at", null: false

@@ -6,14 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Cohort.create(
-  :name => 'spring 2018',
-  :start_date => '12-10-2018',
-  :end_date => '30-10-2018',
-  :hours => 24
-)
-
-User.create(first_name: 'Richard', last_name: 'Wu', email: 'example@example.com', password: '11111111', age: 30, education: 4, cohort_id: 1)
+User.create(first_name: 'Richard', last_name: 'Wu', email: 'example@example.com', password: '11111111', age: 30, education: 4)
 
 99.times do
   User.create(
@@ -22,7 +15,13 @@ User.create(first_name: 'Richard', last_name: 'Wu', email: 'example@example.com'
     age: Faker::Number.number(2),
     email: Faker::Internet.unique.email,
     password: (0...8).map { (rand(10)+48).chr }.join,
-    education: Faker::Number.between(1, 4),
-    cohort_id: 1
+    education: Faker::Number.between(1, 4)
   )
 end
+
+Cohort.create(
+  :name => 'spring 2018',
+  :start_date => '12-10-2018',
+  :end_date => '30-10-2018',
+  :hours => 24
+)

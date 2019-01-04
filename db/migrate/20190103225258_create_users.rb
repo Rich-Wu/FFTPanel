@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password
       t.string :avatar
-      t.references :cohort, foreign_key: true, optional: true
+      t.references :cohort, foreign_key: true
       t.boolean :instructor, default: false
       t.integer :salary
 
