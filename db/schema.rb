@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2019_01_03_225345) do
     t.date "start_date"
     t.date "end_date"
     t.integer "hours"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cohorts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
