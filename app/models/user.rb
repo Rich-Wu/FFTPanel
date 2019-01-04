@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   before_create :default_values
   before_validation :downcase_email
-  belongs_to :cohort, optional: true
+  has_and_belongs_to_many :cohort, optional: true
   validates :email, :presence => true, :uniqueness => true
 
   private
