@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
+      if user_params[:cohort_id] != nil
+        p user_params
+        Cohort.find(user_params[:cohort_id]).users << @user
+      end
       redirect_to user_path(id: @user.id)
     else
       p @user.errors.messages
@@ -41,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :education, :cohort_id, :salary, :instructor)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :education, :salary, :instructor, :cohort_id)
   end
 
 end
