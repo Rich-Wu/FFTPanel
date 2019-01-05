@@ -3,6 +3,8 @@ class User < ApplicationRecord
   before_validation :downcase_email
   has_and_belongs_to_many :cohorts
   validates :email, :presence => true, :uniqueness => true
+  scope :students, -> { where(instructor: 0)}
+  scope :instructors, -> { where(instructor: 1)}
 
   private
 
