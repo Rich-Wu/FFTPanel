@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'courses/new'
+  get 'courses/edit'
+  get 'courses/index'
+  get 'courses/show'
   get 'cohorts/new'
   get 'cohorts/edit'
   get 'cohorts/index'

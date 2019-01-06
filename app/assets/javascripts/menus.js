@@ -1,5 +1,6 @@
 var navitems = document.getElementsByClassName('navitem');
 var menus = document.getElementsByClassName('menu');
+var links = document.getElementsByTagName('a');
 setTimeout(function(){
   for (i=0;i<menus.length;i++){
     menus[i].classList.add('show');
