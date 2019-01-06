@@ -10,6 +10,7 @@
     <div class = "menu">
       <%= user.first_name %><br>
       <%= image_tag("/assets/portraits/#{user.avatar}") %>
+      <%= link_to "show", user_path(user.id), class: "navitem" %>
     </div>
   <% end %>
 </div>
