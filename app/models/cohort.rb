@@ -4,4 +4,5 @@ class Cohort < ApplicationRecord
   scope :students, -> { where(instructor: 0) }
   scope :instructors, -> { where(instructor: 1) }
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :start_date, :end_date, presence: true
 end
