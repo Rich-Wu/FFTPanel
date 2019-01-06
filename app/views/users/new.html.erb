@@ -14,6 +14,7 @@
     <%= f.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name), {include_blank: "Leave blank if this student is not enrolled"}) %><br>
     <%= f.email_field :email %><br>
     <%= f.password_field :password %><br>
+    <%= f.password_field :password_confirmation %><br>
     <%= f.submit "Confirm" %>
   <% end %>
 </div>
