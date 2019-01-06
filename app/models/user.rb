@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :education, inclusion: (1..4)
   validates :email, presence: true, uniqueness: true
   validates :password, confirmation: true, length: { in: 8..32 }
-
   scope :students, -> { where(instructor: 0)}
   scope :instructors, -> { where(instructor: 1)}
 

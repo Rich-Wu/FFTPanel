@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     begin
       @user = User.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-    		puts 'Navigated to invalid /user/:id'
+    		puts 'Navigated to invalid /users/:id'
         puts 'Redirecting to Users index'
     		redirect_to users_path
     end
