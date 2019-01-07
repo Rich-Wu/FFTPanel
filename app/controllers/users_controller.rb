@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      if user_params[:cohort_id] != nil
+      if user_params[:cohort_id] != ""
         p user_params
         Cohort.find(user_params[:cohort_id]).users << @user
       end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :education, :salary, :instructor, :cohort_id)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :education, :salary, :instructor, :cohort_id, :password_confirmation)
   end
 
 end
