@@ -98,3 +98,7 @@ if ENV['RACK_ENV']
 else
   set :database, {adapter: "sqlite3", database: "database.sqlite3"}
 end
+
+Raven.configure do |config|
+  config.dsn = ENV['SENTRY_DSN']
+end
