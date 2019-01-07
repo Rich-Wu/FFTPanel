@@ -98,3 +98,6 @@ if ENV['RACK_ENV']
 else
   set :database, {adapter: "sqlite3", database: "database.sqlite3"}
 end
+
+config.assets.compile = true
+config.assets.digest = true
