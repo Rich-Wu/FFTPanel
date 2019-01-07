@@ -3,4 +3,7 @@
   <li class = 'navitem'>COURSES</li>
   <li class = 'navitem'>INSTRUCTORS</li>
   <li class = 'navitem'>STUDENTS</li>
+  <% if session[:id] %>
+    <%= link_to "LOGOUT", logout_path, method: :delete %>
+  <% end %>
 </ul>

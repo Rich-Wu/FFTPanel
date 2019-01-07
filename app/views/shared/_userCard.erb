@@ -1,5 +1,16 @@
 <div class="" style = "background-image: url('/assets/portraits/FFT_Red_Chocobo_Portrait.png'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
-
 </div>
-<h4 style = "margin: 0; padding: 0;">PAMELA ADMIN</h4>
-<p style = "margin: 0;">There is some test text here</p>
+
+<% if session[:id] %>
+  <h4 style = "margin: 0; padding: 0;"><%= User.find_by(id: session[:id]).name %></h4>
+  <p style = "margin: 0;">
+  <% if User.find_by(id: session[:id]).instructor == true %>
+    Instructor
+  <% else %>
+    Student
+  <% end %>
+  </p>
+<% else %>
+  <h4 style = "margin: 0; padding: 0;">Anonymous User</h4>
+  <p style = "margin: 0;">Please create an account</p>
+<% end %>

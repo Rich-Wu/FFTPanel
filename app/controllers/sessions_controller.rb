@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def new
     if logged_in?
       p "You are already logged in"
-      redirect_to root_path
+      redirect_to user_path(session[:id])
     else
       render 'new'
     end
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     elsif @user.password == params[:session][:password]
       p "logged in"
       session[:id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(session[:id])
     else
       @error = "incorrect credentials provided"
       render 'new'
