@@ -15,11 +15,11 @@
 
  @font-face {
    font-family: "Altima";
-   src: url("/Altima.eot");
-   src: url("/Altima.woff2") format('woff2'),
-        url("/Altima.woff") format('woff'),
-        url("/Altima.ttf") format('truetype'),
-        url("/Altima.svg#Altima") format('svg');
+   src: url("Altima.eot");
+   src: url("Altima.woff2") format('woff2'),
+        url("Altima.woff") format('woff'),
+        url("Altima.ttf") format('truetype'),
+        url("Altima.svg#Altima") format('svg');
  }
 
  /* Start Default styling override */
@@ -27,7 +27,7 @@
    color: black;
    font-family: Altima;
    background-color: black;
-   cursor: url('/FFTCursor.png') 30 0, auto;
+   cursor: url('FFTCursor.png') 30 0, auto;
  }
 
  ul {
