@@ -23,5 +23,4 @@ Cohort.create(
   :name => 'spring 2018',
   :start_date => '12-10-2018',
   :end_date => '30-10-2018',
-  :hours => 24
 )
