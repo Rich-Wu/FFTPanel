@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#main'
-  post '/login', to: 'users#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#delete'
   get 'courses/new'
   get 'courses/edit'
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   get 'cohorts/edit'
   get 'cohorts/index'
   get 'cohorts/show'
-  get '/login', to: 'sessions#new'
   resources :users
   get '/newMember', to: 'users#new'
   post '/newMember', to: 'users#new'
