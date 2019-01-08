@@ -1,21 +1,11 @@
-<%= stylesheet_link_tag 'users' %>
-<div class = "user" style = "grid-area: user; width: 85%; height: 87%; margin: auto; position: static;">
-  <%= render 'shared/userCard' %>
-</div>
-<div style = "grid-area: menu;">
-  <%= render 'shared/menu' %>
-</div>
-<div style = "grid-area: c;">
-  <%= form_for @user, url: '/newMember', html: {class: "userForm"} do |f| %>
-    <%= f.text_field :first_name %><br>
-    <%= f.text_field :last_name %><br>
-    <%= f.date_field :birthday, min: Date.current.advance(years: -150), max: Date.current %><br>
-    <%= f.select(:education, options_for_select([['High School', 1], ['College', 2], ['Masters', 3], ['PHD', 4]]), {include_blank: 'Select your level of education'}, required: true) %><br>
-    <%= f.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name), {include_blank: "Leave blank if this student is not enrolled"}) %><br>
-    <%= f.email_field :email %><br>
-    <%= f.password_field :password %><br>
-    <%= f.password_field :password_confirmation %><br>
-    <%= f.submit "Confirm" %>
-  <% end %>
-</div>
-<%= javascript_include_tag 'menus', 'data-turbolinks-track': 'reload' %>
+<%= form_for @user, url: '/newMember', html: {class: "userForm"} do |f| %>
+  <%= f.text_field :first_name %><br>
+  <%= f.text_field :last_name %><br>
+  <%= f.date_field :birthday, min: Date.current.advance(years: -150), max: Date.current %><br>
+  <%= f.select(:education, options_for_select([['High School', 1], ['College', 2], ['Masters', 3], ['PHD', 4]]), {include_blank: 'Select your level of education'}, required: true) %><br>
+  <%= f.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name), {include_blank: "Leave blank if this student is not enrolled"}) %><br>
+  <%= f.email_field :email %><br>
+  <%= f.password_field :password %><br>
+  <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Confirm" %>
+<% end %>

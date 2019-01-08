@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def main
+    render layout:false
   end
 end
