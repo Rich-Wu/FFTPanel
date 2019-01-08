@@ -5,5 +5,7 @@
   <li class = 'navitem'>STUDENTS</li>
   <% if session[:id] %>
     <%= link_to "LOGOUT", logout_path, method: :delete %>
+  <% else %>
+    <%= link_to "LOG IN", login_path %>
   <% end %>
 </ul>
