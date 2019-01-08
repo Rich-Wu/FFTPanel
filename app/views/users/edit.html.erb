@@ -1,4 +1,4 @@
 <%= form_for @user, url: '/myInfo', method: :patch do |f| %>
-<%= f.text_field :first_name, value: @user.first_name %>
-<%= f.submit "Update Account" %>
+  <%= f.text_field :first_name, value: @user.first_name %>
+  <%= f.submit "Update Account" %>
 <% end %>

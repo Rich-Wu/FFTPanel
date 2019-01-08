@@ -11,13 +11,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.all.find_by(email: params[:session][:email])
-    if @user == nil
-      @error = "User with email #{params[:session][:email]} not found"
+    login = User.all.find_by(email: params[:email])
+    if !login
+      @error = "User with email #{params[:email]} not found"
       render 'new'
-    elsif @user.password == params[:session][:password]
+    elsif login.password == params[:password]
       p "logged in"
-      session[:id] = @user.id
+      session[:id] = login.id
       redirect_to user_path(session[:id])
     else
       @error = "incorrect credentials provided"

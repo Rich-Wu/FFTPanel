@@ -1,4 +1,5 @@
 class CohortsController < ApplicationController
+
   def new
     @cohort = Cohort.new
   end
@@ -7,7 +8,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      if cohort_params[:course_id] != nil
+      if cohort_params[:course_id] != ""
         Course.find(user_params[:course_id]).cohorts << @cohort
       end
       redirect_to cohort_path(id: @cohort.id)
