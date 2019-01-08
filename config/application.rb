@@ -17,3 +17,13 @@ module FFTPanel
     # the framework and any gems in your application.
   end
 end
+
+def age(birthday)
+  age = 0
+  loop do
+    birthday = birthday.advance(years: 1)
+    break if birthday > Date.current
+    age = age + 1
+  end
+  age
+end
