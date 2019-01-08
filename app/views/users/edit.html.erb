@@ -1,2 +1,4 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_for @user, url: '/myInfo', method: :patch do |f| %>
+<%= f.text_field :first_name, value: @user.first_name %>
+<%= f.submit "Update Account" %>
+<% end %>

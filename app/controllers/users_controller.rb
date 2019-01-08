@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       if user_params[:cohort_id] != ""
-        p user_params
         Cohort.find(user_params[:cohort_id]).users << @user
       end
       redirect_to user_path(id: @user.id)
@@ -19,13 +18,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    begin
-      @user = User.find(params[:id])
-      rescue ActiveRecord::RecordNotFound
-        puts 'Navigated to invalid /user/:id'
-        puts 'Redirecting to Users index'
-        redirect_to users_path
-    end
+    @user = User.find(session[:id])
+  end
+
+  def update
+    @user = User.find(session[:id])
+    @user.update(user_params)
   end
 
   def index
