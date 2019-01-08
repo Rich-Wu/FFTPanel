@@ -3,9 +3,11 @@
   <p>There are no Cohorts in the database yet!</p>
 <% else %>
   <% @cohorts.each do |cohort| %>
-    <% if !cohort.users.instructors.empty? %>
-      <%= image_tag(cohort.users.instructors.first.avatar) %>
+  <a href = <%= cohort_path(cohort.id) %>>
+      <% if !cohort.users.instructors.empty? %>
+        <%= image_tag(cohort.users.instructors.first.avatar) %>
+      <% end %>
+      <%= cohort.name %>
     <% end %>
-    <%= cohort.name %>
-  <% end %>
+  </a>
 <% end %>

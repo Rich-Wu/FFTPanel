@@ -44,6 +44,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+    @user.destroy
+  end
+
   private
 
   def verify_account
