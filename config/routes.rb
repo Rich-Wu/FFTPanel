@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create' #login action
   delete '/logout', to: 'sessions#delete' #logout action
   get '/newMember', to: 'users#new' #Create User page
-  post '/newMember', to: 'users#new' #Create User action
+  post '/newMember', to: 'users#create' #Create User action
   get '/myInfo', to: 'users#edit' #Update User page
   patch '/myInfo', to: 'users#update' #Update User action
   get '/users', to: 'users#index' #Read Users Page

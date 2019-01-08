@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       if user_params[:cohort_id] != ""
         Cohort.find(user_params[:cohort_id]).users << @user
       end
+      session[:id] = @user.id
       redirect_to user_path(id: @user.id)
     else
       p @user.errors.messages
