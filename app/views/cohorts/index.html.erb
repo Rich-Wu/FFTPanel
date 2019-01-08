@@ -1,2 +1,11 @@
-<h1>Cohorts#index</h1>
-<p>Find me in app/views/cohorts/index.html.erb</p>
+<h2>Browse Cohorts</h2>
+<% if @cohorts.empty? %>
+  <p>There are no Cohorts in the database yet!</p>
+<% else %>
+  <% @cohorts.each do |cohort| %>
+    <% if !cohort.users.instructors.empty? %>
+      <%= image_tag(cohort.users.instructors.first.avatar) %>
+    <% end %>
+    <%= cohort.name %>
+  <% end %>
+<% end %>

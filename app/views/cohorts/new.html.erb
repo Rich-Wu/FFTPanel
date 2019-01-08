@@ -1,2 +1,7 @@
-<h1>Cohorts#new</h1>
-<p>Find me in app/views/cohorts/new.html.erb</p>
+<%= form_for @cohort, url: '/cohorts/new' do |f| %>
+  Cohort Name: <%= f.text_field :name %><br>
+  Start Date: <%= f.date_field :start_date %><br>
+  End Date: <%= f.date_field :end_date %><br>
+  <%= f.select(:course_id, options_from_collection_for_select(Course.all, :id, :name), {include_blank: "Add this Cohort to a Course"}) %><br>
+  <%= f.submit "Create Cohort" %>
+<% end %>

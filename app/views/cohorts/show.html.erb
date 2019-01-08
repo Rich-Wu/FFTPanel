@@ -1,2 +1,23 @@
-<h1>Cohorts#show</h1>
-<p>Find me in app/views/cohorts/show.html.erb</p>
+<h1><%= @cohort.name %></h1>
+<p><%= @cohort.start_date %></p>
+<p><%= @cohort.end_date %></p>
+<p>
+  <% if @cohort.users.instructors.empty? %>
+    There are no instructors for this cohort yet!
+  <% elsif %>
+    <% @cohort.users.instructors.each do |instructor| %>
+      <%= instructor.name %>
+      <%= image_tag(instructor.avatar) %>
+    <% end %>
+  <% end %>
+</p>
+<p>
+  <% if @cohort.users.students.empty? %>
+    There are no students in this cohort yet!
+  <% elsif %>
+    <% @cohort.users.students.each do |student| %>
+      <%= student.name %>
+      <%= image_tag(student.avatar) %>
+    <% end %>
+  <% end %>
+</p>

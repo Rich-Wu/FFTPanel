@@ -5,6 +5,7 @@ class CohortsController < ApplicationController
   end
 
   def create
+    p params
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
@@ -13,7 +14,7 @@ class CohortsController < ApplicationController
       end
       redirect_to cohort_path(id: @cohort.id)
     else
-      p @user.errors.messages
+      p @cohort.errors.messages
       render 'new'
     end
   end
@@ -29,7 +30,7 @@ class CohortsController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @cohorts = Cohort.all
   end
 
   def show
