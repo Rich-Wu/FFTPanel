@@ -5,12 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= stylesheet_link_tag 'users' %>
+    <%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
     <div class = "user" style = "grid-area: user; width: 85%; height: 87%; margin: auto; position: static;">
       <%= render 'shared/userCard' %>
     </div>

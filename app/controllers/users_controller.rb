@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :verify_account, only: [:edit, :update, :index, :show]
+
   def new
     @user = User.new
   end
@@ -25,10 +27,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(session[:id])
     @user.update(user_params)
+    redirect_to myInfo_path
   end
 
   def index
-    @users = User.all
+    @users = User.all.limit(60).offset(params[:start])
   end
 
   def show
@@ -42,6 +45,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def verify_account
+    if logged_in? == false
+      flash[:error] = "You must be logged in to do that"
+      redirect_to login_path
+    end
+  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :education, :salary, :instructor, :cohort_id, :password_confirmation)
