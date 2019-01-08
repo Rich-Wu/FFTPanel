@@ -9,7 +9,7 @@
   <%= form_for @user, url: '/newMember', html: {class: "userForm"} do |f| %>
     <%= f.text_field :first_name %><br>
     <%= f.text_field :last_name %><br>
-    <%= f.text_field :age %><br>
+    <%= f.date_field :birthday %><br>
     <%= f.select(:education, options_for_select([['High School', 1], ['College', 2], ['Masters', 3], ['PHD', 4]]), {include_blank: 'Select your level of education'}, required: true) %><br>
     <%= f.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name), {include_blank: "Leave blank if this student is not enrolled"}) %><br>
     <%= f.email_field :email %><br>
