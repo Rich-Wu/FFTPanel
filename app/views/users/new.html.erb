@@ -1,3 +1,6 @@
+<% if !@user.errors.empty? %>
+  <h3><%= @user.errors.full_messages.last %></h3>
+<% end %>
 <%= form_for @user, url: '/newMember', html: {class: "userForm"} do |f| %>
   <%= f.text_field :first_name %><br>
   <%= f.text_field :last_name %><br>
