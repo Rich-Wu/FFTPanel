@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_account
+
   def new
     if logged_in?
       p "You are already logged in"
@@ -16,7 +18,7 @@ class SessionsController < ApplicationController
     elsif login.password == params[:password]
       p "logged in"
       session[:id] = login.id
-      redirect_to user_path(session[:id])
+      redirect_to index_path
     else
       @error = "incorrect credentials provided"
       render 'new'

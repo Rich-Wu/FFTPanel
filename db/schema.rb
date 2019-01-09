@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_032714) do
+ActiveRecord::Schema.define(version: 2019_01_09_060218) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 2019_01_08_032714) do
     t.string "email"
     t.string "password"
     t.string "avatar"
-    t.integer "cohort_id"
     t.boolean "instructor", default: false
     t.integer "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birthday"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -1,4 +1,9 @@
 <ul class = 'menu'>
+  <% if session[:id] %>
+    <li class = 'navitem'>
+      <%= link_to "DASHBOARD", index_path %>
+    </li>
+  <% end %>
   <li class = 'navitem'>
     <%= link_to "COURSES", courses_path %>
   </li>
@@ -11,11 +16,16 @@
   <li class = 'navitem'>
     <%= link_to "STUDENTS", students_path %>
   </li>
-  <li class = 'navitem'>
-    <% if session[:id] %>
+  <% if session[:id] %>
+    <li class = 'navitem'>
       <%= link_to "LOGOUT", logout_path, method: :delete %>
+    </li>
     <% else %>
+    <li class = 'navitem'>
       <%= link_to "LOG IN", login_path %>
-    <% end %>
-  </li>
+    </li>
+    <li class = 'navitem'>
+      <%= link_to "SIGN UP", newMember_path %>
+    </li>
+  <% end %>
 </ul>
