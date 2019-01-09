@@ -31,3 +31,47 @@
    width: 100%;
    margin: auto;
  }
+
+ .inputForm {
+   display: grid;
+   min-width: 300px;
+   input {
+     padding: 10px 2px;
+     width: 100%;
+     font-size: 1.2em;
+     background-color: #00000000;
+     border: 0;
+     border-bottom: 2px outset slategray;
+     font-family: Altima;
+   }
+   input[type=date] {
+     padding: 0;
+   }
+   select {
+     font-size: 1.2em;
+     background-color: #00000000;
+     font-family: Altima;
+     padding: 10px 2px;
+   }
+   input[type=submit] {
+     display: inline-block;
+     margin: auto;
+     margin-top: 15px;
+     padding: 2px 30px;
+     border: 2px outset gray;
+     font-size: 1.8em;
+   }
+ }
+
+ .formHeader {
+   text-align: center;
+   margin: 0;
+ }
+
+ ::placeholder {
+   color: #181818;
+ }
+
+ #content {
+   display: flex;
+ }

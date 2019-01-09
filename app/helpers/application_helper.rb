@@ -6,4 +6,14 @@ module ApplicationHelper
       true
     end
   end
+
+  def admin?
+    if !session[:id]
+      false
+    else
+      user = User.find(session[:id])
+      user.admin ? true : false
+    end
+  end
+  
 end
