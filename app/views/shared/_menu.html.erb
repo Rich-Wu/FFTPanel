@@ -1,11 +1,21 @@
 <ul class = 'menu'>
-  <li class = 'navitem'>COHORTS</li>
-  <li class = 'navitem'>COURSES</li>
-  <li class = 'navitem'>INSTRUCTORS</li>
-  <li class = 'navitem'>STUDENTS</li>
-  <% if session[:id] %>
-    <%= link_to "LOGOUT", logout_path, method: :delete %>
-  <% else %>
-    <%= link_to "LOG IN", login_path %>
-  <% end %>
+  <li class = 'navitem'>
+    <%= link_to "COHORTS", cohorts_path %>
+  </li>
+  <li class = 'navitem'>
+    <%= link_to "COURSES", courses_path %>
+  </li>
+  <li class = 'navitem'>
+    <%= link_to "INSTRUCTORS", users_path %>
+  </li>
+  <li class = 'navitem'>
+    <%= link_to "STUDENTS", users_path %>
+  </li>
+  <li class = 'navitem'>
+    <% if session[:id] %>
+      <%= link_to "LOGOUT", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "LOG IN", login_path %>
+    <% end %>
+  </li>
 </ul>

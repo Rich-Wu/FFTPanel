@@ -34,6 +34,16 @@ class UsersController < ApplicationController
     @users = User.all.limit(60).offset(params[:start])
   end
 
+  def instructors
+    @users = User.all.where(instructor: true).limit(60).offset(params[:start])
+    render 'index'
+  end
+
+  def students
+    @users = User.all.where(instructor: false).limit(60).offset(params[:start])
+    render 'index'
+  end
+
   def show
     begin
       @user = User.find(params[:id])
