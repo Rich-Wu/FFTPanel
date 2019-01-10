@@ -1,7 +1,7 @@
 <% if @users.first.instructor %>
-  <h2 class = "biggerText centerText whiteText" >Instructors</h2>
+  <h2 class = "biggerText centerText whiteText" >Instructors</h2><%= button_to "New User", { action: "new" }, method: :get%>
 <% elsif !@users.first.instructor %>
-  <h2 class = "biggerText centerText whiteText" >Students</h2>
+  <h2 class = "biggerText centerText whiteText" >Students</h2><%= button_to "New User", { action: "new" }, method: :get %>
 <% end %>
 
 <div class = "grid">

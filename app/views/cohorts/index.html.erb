@@ -1,4 +1,4 @@
-<h3 class = "centerText biggerText whiteText">Cohorts</h3>
+<h3 class = "centerText biggerText whiteText">Cohorts</h3><%= button_to "New Cohort", { action: "new" }, method: :get %>
 <div class = "grid">
   <% if @cohorts.empty? %>
     <p>There are no Cohorts in the database yet!</p>
