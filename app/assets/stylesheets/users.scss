@@ -78,6 +78,12 @@
  .grid {
    display: grid;
    grid-template: auto / 25% 25% 25% 25%;
+   grid-gap: 5px 5px;
+ }
+
+ .border {
+   border: 2px outset #d6d6d6;
+   box-shadow: 4px 5px black;
  }
 
  .flex {

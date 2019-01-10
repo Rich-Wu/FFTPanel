@@ -11,28 +11,40 @@
   <% if Date.current >= @cohort.start_date && Date.current <= @cohort.end_date %>
     <p style = "text-align: center;">Cohort is currently in session!</p>
   <% end %>
+  <h5 class = "centerText">Instructors</h5>
   <% if @cohort.users.instructors.empty? %>
   <p>
     There are no instructors for this cohort yet!
   </p>
   <% elsif %>
+  <div class = "grid">
     <% @cohort.users.instructors.each do |instructor| %>
-    <p>
-      <%= instructor.name %>
-      <%= image_tag(instructor.avatar) %>
-    </p>
+      <div class = "border">
+        <div class="" style = "background-image: url('<%= image_url(instructor.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
+        </div>
+        <p class = "centerText">
+          <%= instructor.name %>
+        </p>
+      </div>
     <% end %>
+  </div>
   <% end %>
+  <h5 class = "centerText">Students</h5>
     <% if @cohort.users.students.empty? %>
       <p>
         There are no students in this cohort yet!
       </p>
     <% elsif %>
+    <div class = "grid">
       <% @cohort.users.students.each do |student| %>
-        <p>
-          <%= student.name %>
-          <%= image_tag(student.avatar) %>
-        </p>
+        <div class = "border">
+          <div class="" style = "background-image: url('<%= image_url(student.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
+          </div>
+          <p class = "centerText">
+            <%= student.name %>
+          </p>
+        </div>
       <% end %>
+    </div>
     <% end %>
 </div>
