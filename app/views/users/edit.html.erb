@@ -1,4 +1,15 @@
-<%= form_for :user, method: :patch do |f| %>
+<%= form_for :user, method: :patch, html: {class: ["menu", "inputForm"]} do |f| %>
+  <h2 class = "formHeader">Edit ya boy's info</h2>
+  <div class="avatar" style = "background-image: url('<%= image_url(@user.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: 30px auto 30px auto; padding: 0;">
+  </div>
+  <h4 style = "padding-left: 2px;">Email: <%= @user.email %></h4>
   <%= f.text_field :first_name, value: @user.first_name %>
+  <%= f.text_field :last_name, value: @user.last_name %>
+  <h5 style = "padding-left: 2px; padding-top: 10px; padding-bottom: 10px;">
+    Age: <%= age(@user.birthday) %>
+  </h5>
+  <h5 style = "padding-left: 2px; padding-top: 10px; padding-bottom: 10px;">
+    Education: <%= education(@user.education) %>
+  </h5>
   <%= f.submit "Update Account" %>
 <% end %>

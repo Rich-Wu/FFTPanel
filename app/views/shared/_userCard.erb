@@ -1,17 +1,19 @@
 <% if session[:id] %>
-  <div class="" style = "background-image: url('<%= image_url(User.find(session[:id]).avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
-  </div>
-  <h4 style = "margin: 0; padding: 0;"><%= User.find_by(id: session[:id]).name %></h4>
-  <p style = "margin: 0;">
-  <% if User.find_by(id: session[:id]).instructor == true %>
-    Instructor<br>
-    <% if User.find(session[:id]).admin? %>
-      <span style = "color: red;">ADMIN</span>
+  <a href = '/myInfo'>
+    <div class="" style = "background-image: url('<%= image_url(User.find(session[:id]).avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
+    </div>
+    <h4 style = "margin: 0; padding: 0;"><%= User.find_by(id: session[:id]).name %></h4>
+    <p style = "margin: 0;">
+    <% if User.find_by(id: session[:id]).instructor == true %>
+      Instructor<br>
+      <% if User.find(session[:id]).admin? %>
+        <span style = "color: red;">ADMIN</span>
+      <% end %>
+    <% else %>
+      Student
     <% end %>
-  <% else %>
-    Student
-  <% end %>
-  </p>
+    </p>
+  </a>
 <% else %>
   <div class="" style = "background-image: url('/assets/FFT_Wild_Boar_Portrait.png'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
   </div>

@@ -29,3 +29,15 @@ def age(birthday)
   end
   age
 end
+
+def education(num)
+  if num == 1
+    "High School"
+  elsif num == 2
+    "College"
+  elsif num == 3
+    "Masters"
+  elsif num == 4
+    "PHD"
+  end
+end
