@@ -20,7 +20,7 @@ for (item in navitems) {
 };
 for (item in links) {
   links[item].onmouseover = function() {
-    this.style.paddingLeft = "2px";
+    // this.style.paddingLeft = "2px";
     new Audio("/assets/menumove.mp3").play();
   };
   links[item].onmouseout = function() {
