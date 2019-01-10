@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar = Dir.entries("app/assets/images/portraits")[rand(Dir.entries("app/assets/images/portraits").length)]
     if @user.valid?
       @user.save
       session[:id] = @user.id
