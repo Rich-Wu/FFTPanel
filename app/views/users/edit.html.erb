@@ -11,6 +11,6 @@
   <h5 style = "padding-left: 2px; padding-top: 10px; padding-bottom: 10px;">
     Education: <%= education(@user.education) %>
   </h5>
-  <h3 class = "centerText biggerText">Courses:<h3><%= f.collection_check_boxes(:cohort_ids, Cohort.all, :id, :name) %>
+  <h3 class = "centerText biggerText">Cohorts:<h3><%= f.collection_check_boxes(:cohort_ids, Cohort.all, :id, :name) %>
   <%= f.submit "Update Account" %>
 <% end %>
