@@ -1,5 +1,4 @@
-<% if @user != nil %>
-  <%= image_tag(@user.avatar) %>
-<% else %>
-  <h1>User does not exist!</h1>
-<% end %>
+<div class = "menu">
+  <div class="" style = "background-image: url('<%= image_url(@user.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
+  </div>
+</div>

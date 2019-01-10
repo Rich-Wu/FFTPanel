@@ -1,23 +1,38 @@
-<h1><%= @cohort.name %></h1>
-<p><%= @cohort.start_date %></p>
-<p><%= @cohort.end_date %></p>
-<p>
+<div class =  "menu">
+  <h2><%= @cohort.name %></h2>
+  <% if @cohort.courses.empty? %>
+    <h3>This cohort is currently not attending any classes!</h3>
+    <% @cohort.courses.each do |course| %>
+      # This section is to be done
+    <% end %>
+  <% end %>
+  <p>Start Date: <%= @cohort.start_date %></p>
+  <p>Start Date: <%= @cohort.end_date %></p>
+  <% if Date.current >= @cohort.start_date && Date.current <= @cohort.end_date %>
+    <p style = "text-align: center;">Cohort is currently in session!</p>
+  <% end %>
   <% if @cohort.users.instructors.empty? %>
+  <p>
     There are no instructors for this cohort yet!
+  </p>
   <% elsif %>
     <% @cohort.users.instructors.each do |instructor| %>
+    <p>
       <%= instructor.name %>
       <%= image_tag(instructor.avatar) %>
+    </p>
     <% end %>
   <% end %>
-</p>
-<p>
-  <% if @cohort.users.students.empty? %>
-    There are no students in this cohort yet!
-  <% elsif %>
-    <% @cohort.users.students.each do |student| %>
-      <%= student.name %>
-      <%= image_tag(student.avatar) %>
+    <% if @cohort.users.students.empty? %>
+      <p>
+        There are no students in this cohort yet!
+      </p>
+    <% elsif %>
+      <% @cohort.users.students.each do |student| %>
+        <p>
+          <%= student.name %>
+          <%= image_tag(student.avatar) %>
+        </p>
+      <% end %>
     <% end %>
-  <% end %>
-</p>
+</div>

@@ -1,13 +1,28 @@
-<h2>Browse Cohorts</h2>
-<% if @cohorts.empty? %>
-  <p>There are no Cohorts in the database yet!</p>
-<% else %>
-  <% @cohorts.each do |cohort| %>
-  <a href = <%= cohort_path(cohort.id) %>>
-      <% if !cohort.users.instructors.empty? %>
-        <%= image_tag(cohort.users.instructors.first.avatar) %>
-      <% end %>
-      <%= cohort.name %>
+<div class = "grid">
+  <% if @cohorts.empty? %>
+    <p>There are no Cohorts in the database yet!</p>
+  <% else %>
+    <% @cohorts.each do |cohort| %>
+      <div class = "menu" id = "cohort-<%= cohort.id %>">
+        <% if !cohort.users.instructors.empty? %>
+          <div class="" style = "background-image: url('<%= image_url(cohort.users.instructors.first.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
+          </div>
+        <% else %>
+          <div class="flex" style = "align-items: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
+            No Instructor
+          </div>
+        <% end %>
+        <h4>
+          <%= cohort.name %>
+        </h4>
+        <div class = "flex">
+          <%= link_to "show", cohort_path(cohort.id) %>
+          <% if admin? %>
+            <%# link_to "edit", cohort_edit_path(cohort.id) %>
+            <%= link_to "delete", cohort_path(cohort.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  </a>
-<% end %>
+  <% end %>
+</div>

@@ -8,9 +8,6 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      if cohort_params[:course_id] != ""
-        Course.find(user_params[:course_id]).cohorts << @cohort
-      end
       redirect_to cohort_path(id: @cohort.id)
     else
       p @cohort.errors.messages
@@ -40,6 +37,14 @@ class CohortsController < ApplicationController
         puts 'Redirecting to Cohorts index'
     		redirect_to cohorts_path
     end
+  end
+
+  def destroy
+    @cohort = Cohort.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+    @cohort.destroy
   end
 
   private
