@@ -3,16 +3,28 @@
     <div class="" style = "background-image: url('<%= image_url(User.find(session[:id]).avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
     </div>
     <h4 style = "margin: 0; padding: 0;"><%= User.find_by(id: session[:id]).name %></h4>
-    <p style = "margin: 0;">
     <% if User.find_by(id: session[:id]).instructor == true %>
+      <% if !User.find(session[:id]).cohorts.empty? %>
+        <p style = "color: green; margin: 0;">Active</p>
+      <% else %>
+        <p style = "color: red; margin: 0;">Inactive</p>
+      <% end %>
+      <p style = "margin: 0;">
       Instructor<br>
       <% if User.find(session[:id]).admin? %>
-        <span style = "color: red;">ADMIN</span>
+        <span style = "color: red!important;">ADMIN</span>
       <% end %>
+      </p>
     <% else %>
+    <p style = "margin: 0;">
       Student
-    <% end %>
     </p>
+      <% if !User.find(session[:id]).cohorts.empty? %>
+      <p style = "color: green; margin: 0;">Enrolled</p>
+      <% else %>
+      <p style = "color: red; margin: 0;">Inactive</p>
+      <% end %>
+    <% end %>
   </a>
 <% else %>
   <div class="" style = "background-image: url('/assets/FFT_Wild_Boar_Portrait.png'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
