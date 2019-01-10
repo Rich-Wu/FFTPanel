@@ -1,4 +1,21 @@
 <div class = "menu">
+  <% if @user.instructor %>
+    <h3 style = "text-align: center;">Instructor <%= @user.name %></h3>
+  <% else %>
+    <h3 style = "text-align: center;">Student: <%= @user.name %></h3>
+  <% end %>
   <div class="" style = "background-image: url('<%= image_url(@user.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: auto; padding: 0px;">
   </div>
+  <h4 style = "padding-left: 2px;">Email: <%= @user.email %></h4>
+  <h4 style = "padding-left: 2px;">Name: <%= @user.name %></h4>
+  <h4 style = "padding-left: 2px;">Current Status:
+    <% if @user.cohorts.empty? %>
+      <span style = "color: red;">Inactive</span>
+    <% else %>
+      <span style = "color: green;">Student</span>
+    <% end %>
+    </span>
+  </h4>
+  <h4 style = "padding-left: 2px;">Birthday: <%= @user.birthday %></h4>
+  <h4 style = "padding-left: 2px;">Education: <%= education(@user.education) %></h4>
 </div>

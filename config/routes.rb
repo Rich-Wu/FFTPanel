@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'cohorts/new' #Create Cohort page
   post 'cohorts/new', to: 'cohorts#create' #Create Cohort action
   get 'cohort/:id/edit', to: 'cohorts#edit', as: :cohort_edit #Read Cohort edit page
+  patch 'cohort/:id/edit', to: 'cohorts#update'
   get 'cohort/:id', to: 'cohorts#show', as: :cohort #Read Cohort page
   delete 'cohort/:id', to: 'cohorts#destroy' #Destroy cohort action
   get '/cohorts', to: 'cohorts#index' #Read Cohorts page

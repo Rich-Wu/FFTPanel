@@ -18,7 +18,7 @@
         <div class = "flex">
           <%= link_to "show", cohort_path(cohort.id) %>
           <% if admin? %>
-            <%# link_to "edit", cohort_edit_path(cohort.id) %>
+            <%= link_to "edit", cohort_edit_path(cohort.id) %>
             <%= link_to "delete", cohort_path(cohort.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
           <% end %>
         </div>

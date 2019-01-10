@@ -20,9 +20,9 @@
       Student
     </p>
       <% if !User.find(session[:id]).cohorts.empty? %>
-      <p style = "color: green; margin: 0;">Enrolled</p>
+        <p style = "color: green; margin: 0;">Enrolled</p>
       <% else %>
-      <p style = "color: red; margin: 0;">Inactive</p>
+        <p style = "color: red; margin: 0;">Inactive</p>
       <% end %>
     <% end %>
   </a>

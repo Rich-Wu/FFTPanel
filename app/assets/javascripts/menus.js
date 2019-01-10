@@ -18,3 +18,15 @@ for (item in navitems) {
     new Audio("/assets/confirm.mp3").play();
   }
 };
+for (item in links) {
+  links[item].onmouseover = function() {
+    this.style.paddingLeft = "2px";
+    new Audio("/assets/menumove.mp3").play();
+  };
+  links[item].onmouseout = function() {
+    this.style.paddingLeft = "0";
+  };
+  links[item].onclick = function() {
+    new Audio("/assets/confirm.mp3").play();
+  }
+};

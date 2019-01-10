@@ -25,6 +25,12 @@ class CohortsController < ApplicationController
     end
   end
 
+  def update
+    @cohort = Cohort.find(params[:id])
+    @cohort.update(cohort_params)
+    redirect_to cohort_path(@cohort.id)
+  end
+
   def index
     @cohorts = Cohort.all
   end
