@@ -15,17 +15,20 @@ Rails.application.routes.draw do
   patch '/user/:id/edit', to: 'users#edit' #Update User action
   get '/user/:id', to: 'users#show', as: :user #Read User_id page
   delete '/user/:id', to: 'users#destroy' #Destroy User action
-  get 'cohorts/new' #Create Cohort page
-  post 'cohorts/new', to: 'cohorts#create' #Create Cohort action
-  get 'cohort/:id/edit', to: 'cohorts#edit', as: :cohort_edit #Read Cohort edit page
-  patch 'cohort/:id/edit', to: 'cohorts#update'
-  get 'cohort/:id', to: 'cohorts#show', as: :cohort #Read Cohort page
-  delete 'cohort/:id', to: 'cohorts#destroy' #Destroy cohort action
+  get '/cohorts/new' #Create Cohort page
+  post '/cohorts/new', to: 'cohorts#create' #Create Cohort action
+  get '/cohort/:id/edit', to: 'cohorts#edit', as: :cohort_edit #Read Cohort edit page
+  patch '/cohort/:id/edit', to: 'cohorts#update'
+  get '/cohort/:id', to: 'cohorts#show', as: :cohort #Read Cohort page
+  delete '/cohort/:id', to: 'cohorts#destroy' #Destroy cohort action
   get '/cohorts', to: 'cohorts#index' #Read Cohorts page
-  get 'cohorts/edit' #Update Cohort page
-  get 'courses/new'
-  get 'courses/edit'
+  get '/cohorts/edit' #Update Cohort page
+  get '/courses/new', to: 'courses#new'
+  post '/courses/new', to: 'courses#create'
+  get '/course/:id/edit', to: 'courses#edit', as: :course_edit
+  patch '/course/:id/edit', to: 'courses#update'
   get '/courses', to: 'courses#index'
-  get 'courses/show'
+  get '/course/:id', to: 'courses#show', as: :course
+  delete '/course/:id', to: 'courses#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
