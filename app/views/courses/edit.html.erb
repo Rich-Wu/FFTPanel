@@ -1,2 +1,6 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<%= form_for :course, url: course_edit_path(@course.id), method: :patch, html: {class: ["menu", "inputForm"]} do |f| %>
+  <h2 class = "formHeader">Edit Course Info</h2>
+  Name: <%= f.text_field :name, value: @course.name %>
+  Course Hours: <%= f.text_field :hours, value: @course.hours %>
+  <%= f.submit "Update Account" %>
+<% end %>

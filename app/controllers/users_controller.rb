@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :verify_account, only: [:new, :create]
-  before_action :verify_admin, only: :edit
+  before_action :verify_admin, only: [:edit, :destroy]
 
   def new
     @user = User.new

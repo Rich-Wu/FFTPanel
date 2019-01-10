@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/courses/new', to: 'courses#new'
   post '/courses/new', to: 'courses#create'
   get '/course/:id/edit', to: 'courses#edit', as: :course_edit
-  patch '/course/:id/edit', to: 'courses#update'
+  patch '/course/:id/edit', to: 'courses#edit'
   get '/courses', to: 'courses#index'
   get '/course/:id', to: 'courses#show', as: :course
   delete '/course/:id', to: 'courses#destroy'

@@ -1,4 +1,8 @@
 class CohortsController < ApplicationController
+  skip_before_action :verify_account, only: :index
+  before_action :verify_admin, only: [:edit, :update, :new, :create, :destroy] 
+
+
   def new
     @cohort = Cohort.new
   end

@@ -1,2 +1,23 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<div class =  "menu">
+  <h2><%= @course.name %></h2>
+  <% if @course.cohorts.empty? %>
+    <h3>There are currently no cohorts attending this class!</h3>
+  <% else %>
+    <div class = "grid">
+    <% @course.cohorts.each do |cohort| %>
+      <div class = "border">
+        <p class = "centerText">
+          <%= cohort.name %>
+        </p>
+        <p class = "centerText">
+          Starts: <%= cohort.start_date %>
+        </p>
+        <p class = "centerText">
+          Ends: <%= cohort.end_date %>
+        </p>
+        <%= link_to "show", cohort_path(cohort.id), style: "display: block; text-align: center;" %>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+</div>

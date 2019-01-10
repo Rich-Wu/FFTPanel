@@ -2,9 +2,22 @@
   <h2><%= @cohort.name %></h2>
   <% if @cohort.courses.empty? %>
     <h3>This cohort is currently not attending any classes!</h3>
-    <% @cohort.courses.each do |course| %>
-      # This section is to be done
-    <% end %>
+  <% else %>
+    <div class = "grid">
+      <% @cohort.courses.each do |course| %>
+      <div class = "border">
+        <p class = "centerText">
+          <%= course.name %>
+        </p>
+        <div class = "flex">
+          <%= link_to "show", course_path(course.id) %>
+          <% if admin? %>
+            <%= link_to "edit", course_edit_path(course.id) %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   <% end %>
   <p>Start Date: <%= @cohort.start_date %></p>
   <p>Start Date: <%= @cohort.end_date %></p>
@@ -25,6 +38,12 @@
         <p class = "centerText">
           <%= instructor.name %>
         </p>
+        <div class = "flex">
+          <%= link_to "show", user_path(instructor.id) %>
+          <% if admin? %>
+            <%= link_to "edit", user_edit_path(instructor.id) %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
@@ -43,6 +62,12 @@
           <p class = "centerText">
             <%= student.name %>
           </p>
+          <div class = "flex">
+            <%= link_to "show", user_path(student.id) %>
+            <% if admin? %>
+              <%= link_to "edit", user_edit_path(student.id) %>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>

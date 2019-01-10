@@ -1,2 +1,11 @@
-<h1>Courses#new</h1>
-<p>Find me in app/views/courses/new.html.erb</p>
+<% if !@course.errors.empty? %>
+  <h3><%= @course.errors.full_messages.last %></h3>
+<% end %>
+<%= form_for @course, url: '/courses/new', html: {class: [:menu, :inputForm]} do |f| %>
+  <h2 class = "formHeader">Create a new Course</h2>
+  <%= f.text_field :name, {placeholder: "Name of this Course (e.g. Tactics 101)"} %><br>
+  Hours: <%= f.text_field :hours, {placeholder: "# of Course hours"} %>
+  <div style = "padding: 0; margin: auto;">
+    <%= f.submit "Create Course" %>
+  </div>
+<% end %>

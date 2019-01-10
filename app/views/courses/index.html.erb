@@ -1,2 +1,21 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<h3 class = "centerText biggerText whiteText">Courses</h3>
+<div class = "grid">
+  <% if @courses.empty? %>
+    <p>There are no Courses in the database yet!</p>
+  <% else %>
+    <% @courses.each do |course| %>
+    <div class = "menu" id = "course-<%= course.id %>">
+      <h4>
+        <%= course.name %>
+      </h4>
+      <div class = "flex">
+      <%= link_to "show", course_path(course.id) %>
+      <% if admin? %>
+        <%= link_to "edit", course_edit_path(course.id) %>
+        <%= link_to "delete", course_path(course.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
