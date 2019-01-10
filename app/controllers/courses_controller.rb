@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :hours)
+    params.require(:course).permit(:name, :hours, {cohort_ids: []})
   end
 
 end

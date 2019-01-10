@@ -1,6 +1,6 @@
 class CohortsController < ApplicationController
   skip_before_action :verify_account, only: :index
-  before_action :verify_admin, only: [:edit, :update, :new, :create, :destroy] 
+  before_action :verify_admin, only: [:edit, :update, :new, :create, :destroy]
 
 
   def new
@@ -60,7 +60,7 @@ class CohortsController < ApplicationController
   private
 
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date, :course_id)
+    params.require(:cohort).permit(:name, :start_date, :end_date, {course_ids: []}, {user_ids: []})
   end
 
 end
