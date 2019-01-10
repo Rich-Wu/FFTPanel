@@ -17,8 +17,9 @@
 
  body {
    display: grid;
-   grid-template-rows: 60vh 40vh;
-   grid-template-columns: [user] 15em [c];
+   // grid-template-rows: 40vh auto;
+   grid-template-rows: minmax(auto, 300px) auto;
+   grid-template-columns: [user] 15vw [c] 85vw;
    grid-template-areas: "user c"
                         "menu c";
  }
@@ -72,6 +73,13 @@
    color: #181818;
  }
 
- #content {
+ .grid {
+   display: grid;
+   grid-template: auto / 25% 25% 25% 25%;
+ }
+
+ .flex {
    display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
  }

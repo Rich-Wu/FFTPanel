@@ -1,8 +1,24 @@
-<% @users.each do |user| %>
-  <div class = "menu" id = "user-<%= user.id %>">
-    <%= user.first_name %><br>
-    <%= image_tag("/assets/portraits/#{user.avatar}") %>
-    <%= link_to "show", user_path(user.id), class: "navitem" %>
-    <%= link_to "delete", user_path(user.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
-  </div>
+<% if @users.first.instructor %>
+  <h2 style = "text-align: center;">Instructors</h2>
+<% elsif !@users.first.instructor %>
+  <h2 style = "text-align: center;">Students</h2>
 <% end %>
+
+<div class = "grid">
+  <% @users.each do |user| %>
+    <div class = "menu" id = "user-<%= user.id %>">
+      <h4>
+        <%= user.first_name %>
+      </h4>
+      <div class="avatar" style = "background-image: url('<%= image_url(user.avatar) %>'); background-position: center; height: 128px; width: 64px; margin: 30px auto 30px auto; padding: 0;">
+      </div>
+      <div class = "flex">
+        <%= link_to "show", user_path(user.id) %>
+        <% if admin? %>
+          <%= link_to "edit", user_edit_path(user.id) %>
+          <%= link_to "delete", user_path(user.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

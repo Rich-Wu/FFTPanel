@@ -18,13 +18,25 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:id])
+    if request.method == "POST"
+      @user = User.find(params[:id])
+      @user.update(user_params)
+      redirect_to user_edit_path
+    elsif request.method == 'GET'
+      @user = User.find(params[:id])
+      render 'edit'
+    end
   end
 
   def update
-    @user = User.find(session[:id])
-    @user.update(user_params)
-    redirect_to myInfo_path
+    if request.method == "POST"
+      @user = User.find(session[:id])
+      @user.update(user_params)
+      redirect_to myInfo_path
+    elsif request.method == 'GET'
+      @user = User.find(session[:id])
+      render 'edit'
+    end
   end
 
   def index

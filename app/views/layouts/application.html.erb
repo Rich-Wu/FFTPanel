@@ -16,7 +16,7 @@
     <div style = "grid-area: menu;">
       <%= render 'shared/menu' %>
     </div>
-    <div id = "content" style = "grid-area: c;">
+    <div id = "content" style = "grid-area: c; box-sizing: border-box;">
     <%= yield %>
     </div>
     <%= javascript_include_tag 'menus', 'data-turbolinks-track': 'reload' %>
