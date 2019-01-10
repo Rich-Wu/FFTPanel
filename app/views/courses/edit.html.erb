@@ -2,6 +2,6 @@
   <h2 class = "formHeader">Edit Course Info</h2>
   Name: <%= f.text_field :name, value: @course.name %>
   Course Hours: <%= f.text_field :hours, value: @course.hours %>
-  <%= f.collection_check_boxes(:cohort_ids, Cohort.all, :id, :name) %>
+  <h3 class = "centerText biggerText">Cohorts:<h3><%= f.collection_check_boxes(:cohort_ids, Cohort.all, :id, :name) %>
   <%= f.submit "Update Account" %>
 <% end %>
