@@ -16,7 +16,7 @@ User.create(instructor: true, admin: true, first_name: 'Richard', last_name: 'Wu
     email: Faker::Internet.unique.email,
     password: (0...8).map { (rand(10)+48).chr }.join,
     education: Faker::Number.between(1, 4),
-    avatar: Dir.entries("app/assets/images/portraits")[rand(Dir.entries("app/assets/images/portraits").length)]
+    avatar: Dir.entries("app/assets/images/portraits")[rand(2..Dir.entries("app/assets/images/portraits").length)]
   )
 end
 
