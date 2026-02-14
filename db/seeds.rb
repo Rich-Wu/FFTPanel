@@ -12,10 +12,10 @@ User.create(instructor: true, admin: true, first_name: 'Richard', last_name: 'Wu
   User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    birthday: Faker::Date.birthday(1, 150),
+    birthday: Faker::Date.birthday(min_age: 1, max_age: 150),
     email: Faker::Internet.unique.email,
     password: (0...8).map { (rand(10)+48).chr }.join,
-    education: Faker::Number.between(1, 4),
+    education: Faker::Number.between(from: 1, to: 4),
     avatar: Dir.entries("app/assets/images/portraits")[rand(2..Dir.entries("app/assets/images/portraits").length)]
   )
 end
