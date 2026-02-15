@@ -4,5 +4,5 @@
   Start Date: <%= f.date_field :start_date, value: @cohort.start_date %>
   End Date: <%= f.date_field :end_date, value: @cohort.end_date %>
   <h3 class = "centerText biggerText">Courses:<h3><%= f.collection_check_boxes(:course_ids, Course.all, :id, :name) %>
-  <%= f.submit "Update Account" %>
+  <%= f.submit "Update" %>
 <% end %>

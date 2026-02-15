@@ -12,7 +12,13 @@
     <% if @user.cohorts.empty? %>
       <span style = "color: red;">Inactive</span>
     <% else %>
-      <span style = "color: green;">Student</span>
+      <span style = "color: green;">
+      <% if @user.instructor %>
+        Instructor
+      <% elsif !@user.instructor %>
+        Student
+      <% end %>
+      </span>
     <% end %>
     </span>
   </h4>
